@@ -1,0 +1,11 @@
+plugin:
+    name: 'anton.films::lang.plugin.name'
+    description: 'anton.films::lang.plugin.description'
+    author: Anton
+    icon: oc-icon-film
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Films
+        url: anton/films/films
+        icon: icon-film

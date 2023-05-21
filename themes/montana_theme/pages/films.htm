@@ -1,0 +1,27 @@
+title = "films"
+url = "/films"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use anton\films\Models\Film;
+	function onStart() {
+		$this['films'] = Film::get();
+	}
+?>
+==
+<div class="main">
+	<section class="records-section">
+		<div class="container">
+			<div class="records-section__inner">
+				<h2 class="records-section__title">Фильмы</h2>
+				<ul class="records-section__cards">
+					{% for film in films %}
+					{% partial 'card' title=film.title path=film.image link="film/#{film.slug}" %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	{% partial 'telegram' %}
+</div>

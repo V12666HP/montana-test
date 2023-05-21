@@ -1,0 +1,11 @@
+plugin:
+    name: 'anton.series::lang.plugin.name'
+    description: 'anton.series::lang.plugin.description'
+    author: Anton
+    icon: oc-icon-play
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Series
+        url: anton/series/series
+        icon: icon-play

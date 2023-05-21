@@ -1,0 +1,57 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    image:
+        label: Image
+        mode: image
+        imageWidth: '200'
+        imageHeight: '200'
+        span: auto
+        type: mediafinder
+    seasons:
+        label: Seasons
+        prompt: 'Add new item'
+        style: default
+        span: right
+        type: repeater
+        form:
+            fields:
+                season:
+                    label: 'Season episodes'
+                    prompt: 'Add new item'
+                    style: default
+                    span: auto
+                    type: repeater
+                    form:
+                        fields:
+                            episodePath:
+                                label: Episode
+                                mode: file
+                                span: auto
+                                type: mediafinder
+                            episodeTitle:
+                                label: 'Episode title'
+                                span: auto
+                                type: text
+                            episode_slug:
+                                label: 'Episode slug'
+                                span: auto
+                                dependsOn: {  }
+                                preset:
+                                    field: episodeTitle
+                                    type: slug
+                                type: text

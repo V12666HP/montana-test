@@ -1,0 +1,34 @@
+<div class="mobile-menu">
+	<div class="container">
+		<ul class="mobile-menu__items">
+			<li class="mobile-menu__item">
+				<a href="{{ 'home'|page }}" class="mobile-menu__item--link">
+					<img class="{% if this.page.id == 'home' %} active {% endif %} mobile-menu__item--img"
+						src="{{ 'assets/img/mobile-menu-main-page.svg'|theme }}" alt="">
+					<div class="mobile-menu__item--text">Главная</div>
+				</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a href="{{ 'films'|page }}"
+					class="{% if this.page.id == 'films' %} active {% endif %} mobile-menu__item--link">
+					<img class="mobile-menu__item--img " src="{{ 'assets/img/mobile-menu-films.svg'|theme }}" alt="">
+					<div class="mobile-menu__item--text">Фильмы</div>
+				</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a href="{{ 'series'|page }}.html"
+					class="{% if this.page.id == 'series' %} active {% endif %} mobile-menu__item--link">
+					<img class="mobile-menu__item--img " src="{{ 'assets/img/mobile-menu-series.svg'|theme }}" alt="">
+					<div class="mobile-menu__item--text">Сериалы</div>
+				</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a href="{{ 'films-and-series'|page }}"
+					class="{% if this.page.id == 'films-and-series' %} active {% endif %} mobile-menu__item--link">
+					<img class="mobile-menu__item--img " src="{{ 'assets/img/mobile-menu-search.svg'|theme }}" alt="">
+					<div class="mobile-menu__item--text">Поиск</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

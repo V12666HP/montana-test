@@ -1,0 +1,756 @@
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "Montserrat";
+	font-style: normal;
+	color: white;
+}
+
+body {
+	background-color: #1E1E1E;
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(2, 0, 36)), to(rgb(30, 30, 30)));
+	background: linear-gradient(180deg, rgb(2, 0, 36) 0%, rgb(30, 30, 30) 100%);
+}
+
+body::-webkit-scrollbar-track {
+	background-color: #8D8D8D;
+	border-radius: 6px;
+	margin-block: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #ebe2e2;
+	border-radius: 5.5px;
+}
+
+section {
+	margin-top: 30px;
+}
+
+section+section {
+	margin-top: 50px;
+}
+
+.main {
+	padding-bottom: 100px;
+}
+
+.container {
+	position: relative;
+	max-width: 1140px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+a,
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a,
+button {
+	cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.header__inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 27px 0;
+}
+
+.logo {
+	font-weight: 500;
+	font-size: 35px;
+}
+
+.films-and-series {
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 43px;
+}
+
+.series {
+	margin-left: 11px;
+}
+
+.search {
+	width: 230px;
+	background-color: #1E1E1E;
+	border-radius: 13px;
+	padding: 0 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 14px;
+	line-height: 43px;
+}
+
+.search__link {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+}
+
+.search--img {
+	display: block;
+}
+
+.search__input {
+	display: inline;
+	background: none;
+	font-weight: 500;
+	font-size: 20px;
+	width: 100%;
+	outline: none;
+}
+
+.telegram {
+	padding: 0 20px;
+	border-radius: 13px;
+	background-color: #21A4F7;
+	font-weight: 600;
+	font-size: 23px;
+}
+
+.responsive-logo {
+	display: none;
+}
+
+/* CARDS */
+
+.section-with-cards__cards {
+	margin-top: 35px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.section-with-cards__cards::-webkit-scrollbar {
+	display: none;
+}
+
+.card {
+	list-style: none;
+	width: 220px;
+	height: 390px;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
+.section-with-cards__cards .card+.card {
+	margin-left: 30px;
+}
+
+.card__link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.card__title {
+	display: block;
+	height: 40px;
+	margin-top: 10px;
+	font-weight: 600;
+	font-size: 25px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.card__title::-webkit-scrollbar {
+	display: none;
+}
+
+.card--img {
+	height: 100%;
+	max-width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
+	border-radius: 12px;
+}
+
+/* RECORDS */
+
+.records-section {
+	margin-top: 35px;
+}
+
+.records-section__cards {
+	width: 100%;
+	margin-top: 35px;
+	display: -ms-grid;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+	justify-items: center;
+	grid-row-gap: 20px;
+}
+
+/* POSTER */
+
+.poster {
+	margin-top: 20px;
+}
+
+.poster--item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+.poster--item>* {
+	width: 100%;
+	max-height: 40vw;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
+}
+
+.poster-img {
+	width: 100%;
+}
+
+/* NEWS IN TELEGRAM */
+
+.news-in-telegram__inner {
+	background: -o-linear-gradient(359.9deg, rgba(44, 44, 44, 0.51) 0.09%, rgba(33, 164, 247, 0.73) 130.13%);
+	background: linear-gradient(90.1deg, rgba(44, 44, 44, 0.51) 0.09%, rgba(33, 164, 247, 0.73) 130.13%);
+	border-radius: 28px;
+	padding: 55px 80px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	gap: 55px;
+}
+
+.news-in-telegram__text {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	font-weight: 700;
+	font-size: 29px;
+	line-height: 35px;
+}
+
+.news-in-telegram__button {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+	padding: 0 52px;
+	background-color: #21A4F7;
+	border-radius: 13px;
+	font-weight: 600;
+	font-size: 23px;
+	line-height: 46px;
+}
+
+/* VIDEO */
+
+.trailer__video--title,
+.trailer__description--title,
+.film__video--title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: end;
+	margin-top: 6px;
+}
+
+.trailer__video--title,
+.trailer__description--title,
+.film__video--title,
+.film__description--title,
+.the-series__video--title,
+.the-series__description--title {
+	font-size: 25px;
+	line-height: 45px;
+	margin-top: 6px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.trailer__video--player,
+.film__video--player,
+.the-series__video--player {
+	margin-top: 15px;
+}
+
+.trailer__video--player video,
+.film__video--player video,
+.the-series__video--player video {
+	max-width: 100%;
+	min-height: 200px;
+	outline: none;
+	background-color: #000;
+}
+
+.trailer__video--player video:not(:-webkit-full-screen),
+.film__video--player video:not(:-webkit-full-screen),
+.the-series__video--player video:not(:-webkit-full-screen) {
+	border-radius: 16px;
+}
+
+.trailer__video--player video:not(:-ms-fullscreen),
+.film__video--player video:not(:-ms-fullscreen),
+.the-series__video--player video:not(:-ms-fullscreen) {
+	border-radius: 16px;
+}
+
+.trailer__video--player video:not(:fullscreen),
+.film__video--player video:not(:fullscreen),
+.the-series__video--player video:not(:fullscreen) {
+	border-radius: 16px;
+}
+
+.trailer__video--button {
+	margin-top: 10px;
+	padding: 0 20px;
+	background-color: #21A4F7;
+	border-radius: 13px;
+	font-weight: 600;
+	font-size: 23px;
+	line-height: 45px;
+}
+
+.trailer__description--text,
+.film__description--text,
+.the-series__description--text {
+	width: 590px;
+	max-width: 100%;
+	margin-top: 15px;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 30px;
+}
+
+/* THE-SERIES */
+
+.the-series__video--nav-bar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 25px;
+}
+
+.nav-bar__series-and-seasons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-top: 6px;
+	gap: 15px;
+	color: #8D8D8D;
+}
+
+.nav-bar__series,
+.nav-bar__seasons {
+	position: relative;
+	width: 164px;
+	list-style: none;
+	cursor: pointer;
+	background-color: #2C2C2C;
+	border-radius: 13px;
+}
+
+.nav-bar__series--title,
+.nav-bar__series--item a,
+.nav-bar__seasons--title,
+.nav-bar__seasons--item a {
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 45px;
+	font-weight: 500;
+	font-size: 20px;
+	color: #8D8D8D;
+}
+
+.nav-active {
+	display: block !important;
+	border-color: #1E1E1E;
+}
+
+.nav-bar__series ul,
+.nav-bar__seasons ul {
+	max-height: 160px;
+	overflow-y: scroll;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: none;
+	list-style: none;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+	background-color: #1E1E1E;
+	border-radius: 13px;
+}
+
+.nav-bar__series ul::-webkit-scrollbar,
+.nav-bar__seasons ul::-webkit-scrollbar {
+	display: none;
+}
+
+.nav-bar__series--item,
+.nav-bar__seasons--item {
+	border-radius: 13px;
+	margin: 3px 0 0;
+	background-color: #2C2C2C;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+	display: none;
+}
+
+@media (max-width: 1060px) {
+	body::-webkit-scrollbar {
+		display: none;
+	}
+
+	section {
+		margin-top: 13px;
+	}
+
+	section+section {
+		margin-top: 30px;
+	}
+
+	.container {
+		max-width: 1000px;
+		padding: 0 10px;
+	}
+
+	/* HEADER */
+
+	.header {
+		position: sticky;
+		background-color: #000;
+	}
+
+	.header__inner {
+		padding: 0;
+	}
+
+	.logo,
+	.films-and-series,
+	.search,
+	.telegram {
+		display: none;
+	}
+
+	.responsive-logo {
+		display: block;
+		margin: 0 auto;
+		max-height: 50px;
+		overflow: hidden;
+	}
+
+	/* POSTER */
+
+	.poster {
+		margin-top: 0;
+	}
+
+	.poster .container {
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.poster--item {
+		border-radius: 0;
+	}
+
+	.poster--item>* {
+		max-height: 50vw;
+	}
+
+	/* CARDS */
+
+	.section-with-cards__cards::-webkit-scrollbar {
+		display: none;
+	}
+
+	.card {
+		width: 180px;
+		height: 300px;
+	}
+
+	.section-with-cards__cards .card+.card {
+		margin-left: 10px;
+	}
+
+	.card__title {
+		display: none;
+	}
+
+	.card__title {
+		display: none;
+	}
+
+	/* RECORDS */
+
+	.records-section__cards {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+
+	/* NEWS IN TELEGRAM */
+
+	.news-in-telegram {
+		display: none;
+	}
+
+	/* mobile-menu */
+
+	.mobile-menu {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background-color: #2C2C2C;
+		margin-top: 30px;
+		padding: 4px 0;
+		font-size: 15px;
+	}
+
+	.mobile-menu__items {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		gap: 30px;
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+		list-style: none;
+		text-align: center;
+	}
+
+	.mobile-menu__item--img {
+		width: 20px;
+		opacity: 50%;
+	}
+
+	.active {
+		opacity: 100%;
+	}
+}
+
+@media (max-width: 900px) {
+	/* CARDS */
+
+	.trailer__video--title,
+	.trailer__description--title,
+	.film__video--title,
+	.film__description--title,
+	.the-series__video--title,
+	.the-series__description--title {
+		line-height: 35px;
+		font-size: 20px;
+	}
+
+	/* RECORDS */
+
+	.records-section__cards {
+		grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	}
+
+	/* THE-SERIES */
+
+	.the-series__video--nav-bar {
+		gap: 10px;
+	}
+
+	.nav-bar__series-and-seasons {
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
+		gap: 5px;
+	}
+
+	.nav-bar__series--title,
+	.nav-bar__series--item a,
+	.nav-bar__seasons--title,
+	.nav-bar__seasons--item a {
+		line-height: 35px;
+		font-size: 18px;
+	}
+
+	/* POSTER */
+
+	.poster--item>* {
+		max-height: 55vw;
+	}
+}
+
+@media (max-width: 600px) {
+	section+section {
+		margin-top: 20px;
+	}
+
+	/* POSTER */
+
+	.poster--item>* {
+		max-height: 70vw;
+	}
+
+	/* CARDS, VIDEO */
+
+	.section-with-cards__title,
+	.film__video--title,
+	.film__description--title,
+	.film__description--title~p,
+	.the-series__video--title,
+	.the-series__description--title,
+	.the-series__description--title~p,
+	.trailer__video--title,
+	.trailer__description--title,
+	.trailer__description--title~p {
+		font-size: 15px;
+		line-height: 18px;
+	}
+
+	.section-with-cards__cards {
+		margin-top: 12px;
+	}
+
+	.card {
+		width: 145px;
+		height: 240px;
+	}
+
+	.trailer__video--button {
+		line-height: 37px;
+		font-size: 18px;
+	}
+
+	.film__description--title~p,
+	.the-series__description--title~p {
+		font-weight: 500;
+	}
+
+	/* RECORDS */
+
+	.records-section__cards {
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	}
+
+	/* THE-SERIES */
+
+	.the-series__video--nav-bar {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		gap: 10px;
+	}
+
+	.the-series__video--nav-bar h2 {
+		line-height: 27px;
+	}
+
+	.nav-bar__series,
+	.nav-bar__seasons {
+		width: 92px;
+	}
+
+	.nav-bar__series--title,
+	.nav-bar__seasons--title {
+		line-height: 27px;
+		font-size: 12px;
+	}
+
+	/* mobile-menu */
+
+	.mobile-menu {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+	}
+}
+
+@media (max-width: 320px) {
+	.container {
+		padding: 0 5px;
+	}
+
+	/* POSTER */
+
+	.poster--item>* {
+		max-height: 85vw;
+	}
+
+	/* THE-SERIES */
+
+	.the-series__video--nav-bar {
+		gap: 2px;
+	}
+
+	/* CARD */
+
+	.card {
+		width: 130px;
+		height: 200px;
+	}
+
+	/* MOBILE MENU */
+
+	.mobile-menu__items {
+		gap: 5px;
+	}
+}

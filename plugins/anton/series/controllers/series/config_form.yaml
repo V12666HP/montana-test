@@ -1,0 +1,10 @@
+name: Series
+form: $/anton/series/models/theseries/fields.yaml
+modelClass: Anton\Series\Models\TheSeries
+defaultRedirect: anton/series/series
+create:
+    redirect: 'anton/series/series/update/:id'
+    redirectClose: anton/series/series
+update:
+    redirect: anton/series/series
+    redirectClose: anton/series/series

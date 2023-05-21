@@ -1,0 +1,15 @@
+{% set cards = __SELF__.cards %}
+<section class="section-with-cards">
+	<div class="container">
+		<div class="section-with-cards__inner">
+			<h2 class="section-with-cards__title">Фильмы</h2>
+			<ul class="section-with-cards__cards">
+				{% for card in cards %}
+				{% partial 'card' title=card.title path=card.image link=detailsPage|page({
+				(detailsUrlParameter):
+				attribute(card, detailsKeyColumn) }) %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,113 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Anton\Films\Models\Film"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "Фильмов нет"
+detailsPage = "film"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+
+[builderList builderList2]
+modelClass = "Anton\Films\Models\Film"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "film"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+
+[builderList builderList3]
+modelClass = "Anton\Series\Models\TheSeries"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "theSeries"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+<main class="main">
+	<!-- <section class="poster">
+		<div class="container">
+			<a class="poster--item" href="trailer.html">
+				<img class="poster-img" src="{{ 'assets/img/poster-img.png'|theme }}" alt="">
+			</a>
+		</div>
+	</section> -->
+
+	{% set records = builderList.records %}
+	{% set displayColumn = builderList.displayColumn %}
+	{% set noRecordsMessage = builderList.noRecordsMessage %}
+	{% set detailsPage = builderList.detailsPage %}
+	{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+	{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+	<section class="section-with-cards">
+		<div class="container">
+			<div class="section-with-cards__inner">
+				<h2 class="section-with-cards__title">Бесплатно на Монтана</h2>
+				<ul class="section-with-cards__cards">
+					{% for film in records %}
+						{% if film.id == 1 or film.id == 2 or film.id == 3 or film.id == 4 or film.id == 5 %}
+						{% partial 'card' title=film.title path=film.image link="film/#{film.slug}" %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+    {% set records = builderList2.records %}
+	{% set displayColumn = builderList2.displayColumn %}
+	{% set noRecordsMessage = builderList2.noRecordsMessage %}
+	{% set detailsPage = builderList2.detailsPage %}
+	{% set detailsKeyColumn = builderList2.detailsKeyColumn %}
+	{% set detailsUrlParameter = builderList2.detailsUrlParameter %}
+
+	<section class="section-with-cards">
+		<div class="container">
+			<div class="section-with-cards__inner">
+				<h2 class="section-with-cards__title">Бесплатно на Монтана</h2>
+				<ul class="section-with-cards__cards">
+					{% for film in records %}
+						{% if film.id == 4 or film.id == 3 or film.id == 5 or film.id == 7 or film.id == 1 %}
+						{% partial 'card' title=film.title path=film.image link="film/#{film.slug}" %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+    {% set records = builderList3.records %}
+	{% set displayColumn = builderList3.displayColumn %}
+	{% set noRecordsMessage = builderList3.noRecordsMessage %}
+	{% set detailsPage = builderList3.detailsPage %}
+	{% set detailsKeyColumn = builderList3.detailsKeyColumn %}
+	{% set detailsUrlParameter = builderList3.detailsUrlParameter %}
+
+	<section class="section-with-cards">
+		<div class="container">
+			<div class="section-with-cards__inner">
+				<h2 class="section-with-cards__title">Сериалы</h2>
+				<ul class="section-with-cards__cards">
+					{% for series in records %}
+						{% if series.id == 6 or series.id == 7 or series.id == 8 or series.id == 9 or series.id == 10 %}
+						{% partial 'card' title=series.title path=series.image link="series/#{series.slug}" %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	{% partial 'telegram' %}
+</main>

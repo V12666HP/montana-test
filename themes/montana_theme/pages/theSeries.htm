@@ -1,0 +1,75 @@
+title = "theSeries"
+url = "/theSeries/:slug/:season/:episodeTitle"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+	use anton\series\Models\TheSeries;
+	function onStart() {
+		$this['theSeries'] = TheSeries::where('slug', '=', $this->param('slug'))->first();
+		$this['selectedSeason'] = $this->param('season');
+		$this['selectedEpisodeTitle'] = $this->param('episodeTitle');
+
+		$this['theSeriesArray'] = (array) $this['theSeries'];
+		$this['seasons'] = json_decode($this['theSeriesArray']["attributes"]["seasons"], true);
+
+		foreach ($this['seasons'][$this['selectedSeason']]["season"] as $episode) {
+			if ($episode["episodeTitle"] == $this["selectedEpisodeTitle"]) {
+				$this['selectedEpisode'] = $episode;
+			}
+		}
+		$this['episodePath'] = $this["selectedEpisode"]["episodePath"];
+
+		$this['navigationSeasons'] = $this['seasons'];
+		$this['navigationEpisodes'] = $this['seasons'][$this['selectedSeason']]["season"];
+	}
+?>
+==
+<main class="main">
+	<section class="the-series__video">
+		<div class="container">
+			<div class="the-series__video--nav-bar">
+				<h2 class="the-series__video--title">{{ theSeries.title }}</h2>
+				<ul class="nav-bar__series-and-seasons">
+					<li class="nav-bar__series">
+						<div class="nav-bar__series--title">Серии</div>
+						<ul>
+							{% for episode in navigationEpisodes %}
+							<li class="nav-bar__series--item">
+								<a
+									href="{{ 'theSeries'|page({ season: selectedSeason, episodeTitle: episode.episodeTitle }) }}">
+									{{ loop.index }} серия
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</li>
+					<li class="nav-bar__seasons">
+						<div class="nav-bar__seasons--title">Сезоны</div>
+						<ul>
+							{% for season in navigationSeasons %}
+							<li class="nav-bar__seasons--item">
+								<a href="{{ 'theSeries'|page({ season: loop.index0, episodeTitle: season.season.0.episodeTitle }) }}">
+									{{ loop.index }} сезон
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="the-series__video--player">
+				<video controls>
+					<source src={{ episodePath|media }}>
+				</video>
+			</div>
+		</div>
+	</section>
+	<section class="the-series__description">
+		<div class="container">
+			<h2 class="the-series__description--title">Описание</h2>
+			{{ record.description|raw }}
+		</div>
+	</section>
+</main>

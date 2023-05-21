@@ -1,0 +1,10 @@
+name: Films
+form: $/anton/films/models/film/fields.yaml
+modelClass: Anton\Films\Models\Film
+defaultRedirect: anton/films/films
+create:
+    redirect: 'anton/films/films/update/:id'
+    redirectClose: anton/films/films
+update:
+    redirect: anton/films/films
+    redirectClose: anton/films/films

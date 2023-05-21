@@ -1,0 +1,31 @@
+title = "film"
+url = "/film/:slug"
+layout = "default"
+is_hidden = 0
+
+[siteSearchInclude]
+==
+<?
+	use anton\films\Models\Film;
+	function onStart() {
+		$this['film'] = Film::where('slug', '=', $this->param('slug'))->first();
+	}
+?>
+==
+
+<main class="main">
+	<section class="film__video">
+		<div class="container">
+			<h2 class="film__video--title">{{ film.title }}</h2>
+			<div class="film__video--player">
+				<video src="{{ film.video|media }}" controls width="900"></video>
+			</div>
+		</div>
+	</section>
+	<section class="film__description">
+		<div class="container">
+			<h2 class="film__description--title">Описание</h2>
+			{{ film.description|raw }}
+		</div>
+	</section>
+</main>

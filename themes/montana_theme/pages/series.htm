@@ -1,0 +1,27 @@
+title = "series"
+url = "/series"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+	use anton\series\Models\TheSeries;
+	function onStart() {
+		$this['allSeries'] = TheSeries::get();
+	}
+?>
+==
+<div class="main">
+    <section class="records-section">
+		<div class="container">
+			<div class="records-section__inner">
+				<h2 class="records-section__title">Сериалы</h2>
+				<ul class="records-section__cards">
+					{% for series in allSeries %}
+					{% partial 'card' title=series.title path=series.image link="theSeries/#{series.slug}/0/#{series.seasons.0.0.season.0.episodeTitle}" %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>

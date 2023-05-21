@@ -1,0 +1,12 @@
+list: $/anton/series/models/theseries/columns.yaml
+modelClass: Anton\Series\Models\TheSeries
+title: Series
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'anton/series/series/update/:id'

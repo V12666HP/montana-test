@@ -1,0 +1,12 @@
+list: $/anton/films/models/film/columns.yaml
+modelClass: Anton\Films\Models\Film
+title: Films
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'anton/films/films/update/:id'

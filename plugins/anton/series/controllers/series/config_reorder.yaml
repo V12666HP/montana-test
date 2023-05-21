@@ -1,0 +1,4 @@
+title: Series
+modelClass: Anton\Series\Models\TheSeries
+toolbar:
+    buttons: reorder_toolbar

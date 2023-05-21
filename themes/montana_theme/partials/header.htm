@@ -1,0 +1,41 @@
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+==
+<header class="header">
+	<div class="container">
+		<div class="header__inner">
+
+			<a class="logo" href="{{ 'home'|page }}">MONTANA</a>
+
+			<div class="films-and-series">
+				<a href="{{ 'films'|page }}" class="films">фильмы</a>
+				<a href="{{ 'series'|page }}" class="series">сериалы</a>
+			</div>
+			<div class="search">
+				<a href="{{ 'films-and-series'|page }}" class="search__link">
+					<img class="search--img" src="{{ 'assets/img/search-img.svg'|theme }}" alt="">
+				</a>
+				<form action="{{ searchInput.searchPage | page }}?q={{ query | url_encode(true) }}" method="get">
+					<div class="ss-search-form">
+						<div class="ss-search-form__input">
+							<input class="search__input" name="q" type="text" placeholder="Найти"
+								value="{{ searchInput.query }}" autocomplete="off" autofocus {% if
+								searchInput.useAutoComplete %} data-track-input data-request="{{ searchInput }}::onType"
+								data-request-before-update="document.getElementById('autocomplete-results').classList.add('ss-search-form__results--visible')"
+								data-request-update="'{{ searchInput }}::autocomplete': '#autocomplete-results'" {%
+								endif %}>
+							<!--   ,<button class="ss-search-form__submit" type="submit">Search</button> -->
+						</div>
+						<div class="ss-search-form__results" id="autocomplete-results"></div>
+					</div>
+				</form>
+			</div>
+			<button class="telegram">наш телеграм канал</button>
+			<a class="responsive-logo" href="{{ 'home'|page }}">
+				<img class="responsive-logo--img" src="{{ 'assets/img/responsive-logo.svg'|theme }}" alt="">
+			</a>
+		</div>
+	</div>
+</header>

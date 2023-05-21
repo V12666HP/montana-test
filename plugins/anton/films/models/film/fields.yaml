@@ -1,0 +1,30 @@
+fields:
+    title:
+        label: Title
+        span: left
+        placeholder: 'Введите название'
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    image:
+        label: Image
+        span: auto
+        mode: image
+        imageWidth: '200'
+        imageHeight: '200'
+        type: mediafinder
+    video:
+        label: Video
+        span: auto
+        mode: file
+        type: mediafinder
